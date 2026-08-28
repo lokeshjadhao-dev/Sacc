@@ -1,0 +1,108 @@
+{
+  "id": "com.lokesh.sac.ui5kpicard",
+  "version": "1.0.0",
+  "name": "UI5 KPI Card",
+  "description": "Fiori-style KPI card using an SAC measure data binding.",
+  "newInstancePrefix": "UI5KPICard",
+  "icon": "/ui5_kpi_card_icon.png",
+  "vendor": "Custom",
+  "eula": "",
+  "license": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-lokesh-sac-ui5kpicard-1",
+      "url": "/ui5_kpi_card.js",
+      "integrity": "sha256-Na16QmSLk3GrRVQJcXQzKP7QD/sQHvWUHDLobgGDIUA=",
+      "ignoreIntegrity": false
+    }
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "KPI title",
+      "default": "Revenue"
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "KPI subtitle",
+      "default": "Current value"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "Text before KPI value",
+      "default": ""
+    },
+    "suffix": {
+      "type": "string",
+      "description": "Text after KPI value",
+      "default": ""
+    },
+    "showTrend": {
+      "type": "boolean",
+      "description": "Show trend row",
+      "default": false
+    },
+    "trendValue": {
+      "type": "number",
+      "description": "Trend percentage",
+      "default": 0
+    },
+    "trendLabel": {
+      "type": "string",
+      "description": "Trend label",
+      "default": "vs previous period"
+    }
+  },
+  "methods": {
+    "setTitle": {
+      "description": "Changes the KPI title.",
+      "parameters": [
+        {
+          "name": "title",
+          "type": "string"
+        }
+      ]
+    },
+    "setSubtitle": {
+      "description": "Changes the KPI subtitle.",
+      "parameters": [
+        {
+          "name": "subtitle",
+          "type": "string"
+        }
+      ]
+    },
+    "setTrend": {
+      "description": "Sets the trend percentage and label.",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "number"
+        },
+        {
+          "name": "label",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "events": {
+    "onClick": {
+      "description": "KPI card click event."
+    }
+  },
+  "dataBindings": {
+    "kpiData": {
+      "feeds": [
+        {
+          "id": "measure",
+          "description": "KPI Measure",
+          "type": "mainStructureMember"
+        }
+      ]
+    }
+  },
+  "supportsMobile": true,
+  "supportsExport": true
+}
